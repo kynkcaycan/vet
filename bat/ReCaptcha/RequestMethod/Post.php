@@ -3,7 +3,7 @@
  * This is a PHP library that handles calling reCAPTCHA.
  *
  * @copyright Copyright (c) 2015, Google Inc.
- * @link      http://www.google.com/recaptcha
+ * @link      https://www.google.com/recaptcha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ class Post implements RequestMethod
      * URL to which requests are POSTed.
      * @const string
      */
-    const SITE_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+    const SITE_VERIFY_URL = 'httpss://www.google.com/recaptcha/api/siteverify';
 
     /**
      * Submit the POST request with the specified parameters.
@@ -54,7 +54,7 @@ class Post implements RequestMethod
          */
         $peer_key = version_compare(PHP_VERSION, '5.6.0', '<') ? 'CN_name' : 'peer_name';
         $options = array(
-            'http' => array(
+            'https' => array(
                 'header' => "Content-type: application/x-www-form-urlencoded\r\n",
                 'method' => 'POST',
                 'content' => $params->toQueryString(),

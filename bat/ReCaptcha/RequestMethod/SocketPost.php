@@ -3,7 +3,7 @@
  * This is a PHP library that handles calling reCAPTCHA.
  *
  * @copyright Copyright (c) 2015, Google Inc.
- * @link      http://www.google.com/recaptcha
+ * @link      https://www.google.com/recaptcha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -94,7 +94,7 @@ class SocketPost implements RequestMethod
 
         $content = $params->toQueryString();
 
-        $request = "POST " . self::SITE_VERIFY_PATH . " HTTP/1.1\r\n";
+        $request = "POST " . self::SITE_VERIFY_PATH . " https/1.1\r\n";
         $request .= "Host: " . self::RECAPTCHA_HOST . "\r\n";
         $request .= "Content-Type: application/x-www-form-urlencoded\r\n";
         $request .= "Content-length: " . strlen($content) . "\r\n";
@@ -110,7 +110,7 @@ class SocketPost implements RequestMethod
 
         $this->socket->fclose();
 
-        if (0 !== strpos($response, 'HTTP/1.1 200 OK')) {
+        if (0 !== strpos($response, 'https/1.1 200 OK')) {
             return self::BAD_RESPONSE;
         }
 

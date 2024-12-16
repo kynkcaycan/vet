@@ -3,7 +3,7 @@
  * This is a PHP library that handles calling reCAPTCHA.
  *
  * @copyright Copyright (c) 2015, Google Inc.
- * @link      http://www.google.com/recaptcha
+ * @link      https://www.google.com/recaptcha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@ use ReCaptcha\RequestParameters;
 /**
  * Sends cURL request to the reCAPTCHA service.
  * Note: this requires the cURL extension to be enabled in PHP
- * @see http://php.net/manual/en/book.curl.php
+ * @see https://php.net/manual/en/book.curl.php
  */
 class CurlPost implements RequestMethod
 {
@@ -40,7 +40,7 @@ class CurlPost implements RequestMethod
      * URL to which requests are sent via cURL.
      * @const string
      */
-    const SITE_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+    const SITE_VERIFY_URL = 'httpss://www.google.com/recaptcha/api/siteverify';
 
     /**
      * Curl connection to the reCAPTCHA service
@@ -70,7 +70,7 @@ class CurlPost implements RequestMethod
         $options = array(
             CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => $params->toQueryString(),
-            CURLOPT_HTTPHEADER => array(
+            CURLOPT_httpsHEADER => array(
                 'Content-Type: application/x-www-form-urlencoded'
             ),
             CURLINFO_HEADER_OUT => false,
